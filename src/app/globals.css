@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #08243f;
+  --brand: #0063b8;
+  --brand-hover: #005299;
+  --brand-active: #004380;
+  --foreground-dark: #08243f;
+  --muted-foreground: #8a8f98;
+  --border-subtle: #e4e8ee;
+  --surface-soft: #fafbfc;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-active: var(--brand-active);
+  --color-primary: var(--brand);
+  --color-primary-hover: var(--brand-hover);
+  --color-primary-active: var(--brand-active);
+  --color-foreground-dark: var(--foreground-dark);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border-subtle: var(--border-subtle);
+  --color-border: var(--border-subtle);
+  --color-surface-soft: var(--surface-soft);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+@keyframes toast-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-toast-in {
+  animation: toast-slide-in 200ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-toast-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
